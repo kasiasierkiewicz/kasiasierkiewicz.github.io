@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/kasiasierkiewicz.github.io/static/css/main.f855e6bc.css",
-    "main.js": "/kasiasierkiewicz.github.io/static/js/main.daa07859.js",
-    "static/js/453.5dac44da.chunk.js": "/kasiasierkiewicz.github.io/static/js/453.5dac44da.chunk.js",
-    "static/media/logo.svg": "/kasiasierkiewicz.github.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/kasiasierkiewicz.github.io/index.html",
-    "main.f855e6bc.css.map": "/kasiasierkiewicz.github.io/static/css/main.f855e6bc.css.map",
-    "main.daa07859.js.map": "/kasiasierkiewicz.github.io/static/js/main.daa07859.js.map",
-    "453.5dac44da.chunk.js.map": "/kasiasierkiewicz.github.io/static/js/453.5dac44da.chunk.js.map"
+    "main.css": "/website/static/css/main.f855e6bc.css",
+    "main.js": "/website/static/js/main.6a63270a.js",
+    "static/js/453.5dac44da.chunk.js": "/website/static/js/453.5dac44da.chunk.js",
+    "static/media/logo.svg": "/website/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/website/index.html",
+    "main.f855e6bc.css.map": "/website/static/css/main.f855e6bc.css.map",
+    "main.6a63270a.js.map": "/website/static/js/main.6a63270a.js.map",
+    "453.5dac44da.chunk.js.map": "/website/static/js/453.5dac44da.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.daa07859.js"
+    "static/js/main.6a63270a.js"
   ]
 }
