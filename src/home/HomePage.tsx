@@ -5,7 +5,7 @@ import { MyTechniquesSector} from "home/sectors/MyTechniquesSector";
 import {TopSector} from "./sectors/TopSector";
 import {AboutSector} from "./sectors/AboutSector";
 import {PhraseSector} from "./sectors/PhraseSector";
-import {OpinionsSector} from "./sectors/OpinionsSector";
+import {ReviewSector} from "./sectors/ReviewSector";
 
 const Layout = styled.div`
     display: grid;
@@ -32,7 +32,7 @@ export const HomePage: React.FC<HomePageProps> = (props) => {
                 <MyTechniquesSector/>
             </HomeComponent>
             <HomeComponent>
-                <OpinionsSector/>
+                <ReviewSector/>
             </HomeComponent>
         </>
     )
