@@ -111,7 +111,7 @@ export const MyTechniquesSector = () => {
             </CenteredRow>
             <WhyRow>
                 <Col $width={width}>
-                    {whyFirstCol.map((el) => <WhyComp title={el.title} description={el.description}/>)}
+                    {whyFirstCol.map((el) => <WhyComp  title={el.title} description={el.description}/>)}
                 </Col>
                 <Col $width={width}>
                     {whySecCol.map((el) => <WhyComp title={el.title} description={el.description}/>)}
