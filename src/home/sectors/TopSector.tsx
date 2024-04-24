@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import background_img from "assets/background_home.webp";
-import {useCheckMobileScreen} from "tools/window_tools";
+import React from 'react'
+import styled from 'styled-components'
+import background_img from 'assets/background_home.webp'
+import { useCheckMobileScreen } from 'tools/window_tools'
 
 const FirstRow = styled.img`
     background-size: cover;
@@ -17,7 +17,5 @@ const Wrapper = styled.div<{ $width: string }>`
 export const TopSector = () => {
     const isMobile = useCheckMobileScreen()
 
-    return (
-        <FirstRow src={background_img}/>
-    )
+    return <FirstRow src={background_img} />
 }
