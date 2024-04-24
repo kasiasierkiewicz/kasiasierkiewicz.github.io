@@ -1,10 +1,11 @@
-import React from "react";
+import React from 'react'
 
 interface Props {
 
 }
+
 export const About: React.FC<Props> = () => {
- return (
-     <div>ELO</div>
- )
+    return (
+        <div>ELO</div>
+    )
 }

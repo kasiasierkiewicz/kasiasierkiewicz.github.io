@@ -1,4 +1,4 @@
-import {DefaultTheme} from 'styled-components';
+import { DefaultTheme } from 'styled-components'
 
 
 const myTheme: DefaultTheme = {
@@ -11,8 +11,8 @@ const myTheme: DefaultTheme = {
         secondary: '#e7d0c9',
         third: '#d4b0a5',
         fourth: '#939580'
-    },
-};
+    }
+}
 
 
-export {myTheme};
+export { myTheme }

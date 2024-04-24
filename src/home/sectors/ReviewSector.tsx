@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import styled from 'styled-components';
-import Carousel from "home/components/Carousel";
-import {getReviews, Review} from "home/services/booksy_review_scraper";
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
+import Carousel from 'home/components/Carousel'
+import { getReviews, Review } from 'home/services/booksy_review_scraper'
 
 
 interface ReviewProps {
@@ -13,13 +13,13 @@ const ReviewText = styled.p`
 `
 
 const ItemFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-`;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+`
 
 const shortReview = (review: String) =>
-    review.length > 200 ? review.substring(0, 200) + "..." : review
+    review.length > 200 ? review.substring(0, 200) + '...' : review
 
 const ReviewComponent = (props: ReviewProps) => {
     const date = new Date(props.review.created)
@@ -40,17 +40,17 @@ const CarouselComponent = styled.div`
 `
 
 export const ReviewSector = () => {
-    const [reviews, setReviews] = useState<Review[]>([]);
+    const [reviews, setReviews] = useState<Review[]>([])
     useEffect(() => {
         getReviews('/booksy.html')
             .then((reviews) => {
-                return setReviews(reviews);
+                return setReviews(reviews)
             })
             .catch((err) => {
-                console.log(err);
-                return [];
-            });
-    }, []);
+                console.log(err)
+                return []
+            })
+    }, [])
 
     return (
         <CarouselComponent>
@@ -62,4 +62,4 @@ export const ReviewSector = () => {
         </CarouselComponent>
     )
 
-};
+}
