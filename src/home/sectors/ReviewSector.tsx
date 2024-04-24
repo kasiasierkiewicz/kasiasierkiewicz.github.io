@@ -37,6 +37,8 @@ const ReviewComponent = (props: ReviewProps) => {
 const CarouselComponent = styled.div`
     width: 100%;
     display: flex;
+    padding-top: 2em;
+    padding-bottom: 2em;
 `
 
 export const ReviewSector = () => {
