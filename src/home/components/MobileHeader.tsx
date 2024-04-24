@@ -1,8 +1,8 @@
-import styled, {DefaultTheme} from "styled-components";
-import React from "react";
+import styled, { DefaultTheme } from 'styled-components'
+import React from 'react'
 
 interface HeaderProps {
-    theme: DefaultTheme
+    theme: DefaultTheme;
 }
 
 const Container = styled.div`
@@ -13,7 +13,9 @@ const Container = styled.div`
 `
 
 export const MobileHeader: React.FC<HeaderProps> = (props) => {
-    return (<Container>
-        <p>Elo Ziom</p>
-    </Container>)
+    return (
+        <Container>
+            <p>Elo Ziom</p>
+        </Container>
+    )
 }

@@ -1,11 +1,11 @@
-import React from "react";
-import styled, {useTheme} from "styled-components";
-import {HomeComponent} from "home/components/HomeComponent";
-import { MyTechniquesSector} from "home/sectors/MyTechniquesSector";
-import {TopSector} from "./sectors/TopSector";
-import {AboutSector} from "./sectors/AboutSector";
-import {PhraseSector} from "./sectors/PhraseSector";
-import {OpinionsSector} from "./sectors/OpinionsSector";
+import React from 'react'
+import styled, { useTheme } from 'styled-components'
+import { HomeComponent } from 'home/components/HomeComponent'
+import { MyTechniquesSector } from 'home/sectors/MyTechniquesSector'
+import { TopSector } from './sectors/TopSector'
+import { AboutSector } from './sectors/AboutSector'
+import { PhraseSector } from './sectors/PhraseSector'
+import { ReviewSector } from './sectors/ReviewSector'
 
 const Layout = styled.div`
     display: grid;
@@ -20,19 +20,19 @@ export const HomePage: React.FC<HomePageProps> = (props) => {
     return (
         <>
             <HomeComponent>
-                <TopSector/>
+                <TopSector />
             </HomeComponent>
             <HomeComponent background={theme.colors.secondary}>
-                <AboutSector/>
+                <AboutSector />
             </HomeComponent>
             <HomeComponent>
-                <PhraseSector/>
+                <PhraseSector />
             </HomeComponent>
             <HomeComponent background={theme.colors.secondary}>
-                <MyTechniquesSector/>
+                <MyTechniquesSector />
             </HomeComponent>
             <HomeComponent>
-                <OpinionsSector/>
+                <ReviewSector />
             </HomeComponent>
         </>
     )

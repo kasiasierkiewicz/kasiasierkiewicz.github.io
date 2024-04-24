@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import {ReactNode} from "react";
-import {useCheckMobileScreen} from "../../tools/window_tools";
+import styled from 'styled-components'
+import { ReactNode } from 'react'
+import { useCheckMobileScreen } from '../../tools/window_tools'
 
 type Props = {
     children: ReactNode
@@ -17,9 +17,9 @@ const Children = styled.div<{ $width: string }>`
     margin: auto;
 
 `
-export const HomeComponent = ({children, background}: Props) => {
+export const HomeComponent = ({ children, background }: Props) => {
     const isMobile = useCheckMobileScreen()
-    const width = isMobile ? "100%" : "80%"
+    const width = isMobile ? '100%' : '80%'
     return (
         <Row $background={background}>
             <Children $width={width}>
