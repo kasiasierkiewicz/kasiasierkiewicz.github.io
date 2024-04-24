@@ -1,9 +1,11 @@
 import React, {ReactNode, useEffect, useRef, useState} from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+import {useCheckMobileScreen} from "../../tools/window_tools";
 
 interface CarouselProps {
     children: ReactNode[]
 }
+
 
 const CarouselWrapper = styled.div`
     display: flex;
@@ -27,7 +29,8 @@ const CarouselPoc: React.FC<CarouselProps> = ({children}) => {
     const carouselRef = useRef<HTMLDivElement>(null);
     const [{width, height}, setDimensions] = useState({width: 0, height: 0})
     const [itemsCount, setItemCount] = useState(0)
-    const itemWidth = width / 4
+    const isMobile = useCheckMobileScreen();
+    const itemWidth = isMobile ? width : width / 4
     const getDimensions = () => ({
         width: carouselRef.current?.offsetWidth || 300,
         height: carouselRef.current?.offsetHeight || 300
@@ -59,7 +62,6 @@ const CarouselPoc: React.FC<CarouselProps> = ({children}) => {
         };
 
 
-
         return () => {
             window.removeEventListener("resize", handleResize)
             if (intervalId) {
@@ -74,7 +76,7 @@ const CarouselPoc: React.FC<CarouselProps> = ({children}) => {
 
     return (
         <CarouselWrapper ref={carouselRef}>
-            {children.map(child => <Item key={Math.random().toString(36).slice(2, 7)} $width={25}>{child}</Item>)}
+            {children.map(child => <Item key={Math.random().toString(36).slice(2, 7)} $width={isMobile ? 100 : 25}>{child}</Item>)}
         </CarouselWrapper>
     );
 };
