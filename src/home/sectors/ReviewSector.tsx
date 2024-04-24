@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Carousel from 'home/components/Carousel'
-import { getReviews, Review } from 'home/services/booksy_review_scraper'
+import { FizjomedicaId, getReviews, Review, YeyId } from 'home/services/booksy_review_scraper'
 
 
 interface ReviewProps {
@@ -44,7 +44,9 @@ const CarouselComponent = styled.div`
 export const ReviewSector = () => {
     const [reviews, setReviews] = useState<Review[]>([])
     useEffect(() => {
-        getReviews('/booksy.html')
+        getReviews('/booksy.html', YeyId)
+            .then(reviews => getReviews('/fizjomedica.html', FizjomedicaId)
+                .then(r => [...r, ...reviews]))
             .then((reviews) => {
                 return setReviews(reviews)
             })

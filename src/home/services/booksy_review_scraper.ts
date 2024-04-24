@@ -13,7 +13,10 @@ interface User {
     first_name: string;
 }
 
-export async function getReviews(url: string): Promise<Review[]> {
+export const YeyId = 306022
+export const FizjomedicaId = 161189
+
+export async function getReviews(url: string, id?: number): Promise<Review[]> {
     const reviews = await fetchHtml(url)
     const reviewsScript = reviews.scripts[5].text
     const script = reviewsScript
@@ -23,7 +26,9 @@ export async function getReviews(url: string): Promise<Review[]> {
     const total = getTotalPageCount(script)
     const reviewsParsed = collectReviews(script, total)
 
-    return reviewsParsed.filter((r) => r.staff.map((s) => s.id).includes(306022))
+    return reviewsParsed.filter((r) => {
+        return id ? r.staff.map((s) => s.id).includes(id) : true
+    })
 }
 
 async function fetchHtml(url: string) {
@@ -35,10 +40,14 @@ async function fetchHtml(url: string) {
 
 function getTotalPageCount(script: string): number {
     const pagesMatch = /,13,\d+,/.exec(script)
+    const pagesMatch2 = /reviewsTotalPages:\d+/.exec(script)
+    const pages2 = pagesMatch2?.flatMap(s => s.split(':').pop()).pop()
     const pages = pagesMatch
         ?.flatMap((m) => m.split(',').filter((s) => s.length != 0))
         .pop()
-    return parseInt(pages || '0')
+    const count = pages || pages2 || '0'
+
+    return parseInt(count)
 }
 
 function collectReviews(script: string, totalPageCount: number): Review[] {
